@@ -1,1 +1,37 @@
-<h1>Passport example</h1>
+<hr> 
+{{#if currentUser}}
+<h5>Hello {{currentUser.name}}!</h5> 
+<h5>You are logged in!</h5>
+{{else}}
+<h5>Hello, who are you?  Sign in!</h5>
+{{/if}}
+<hr> 
+<h1>PASSPORT</h1>
+<h3>Passport is a flexible and modular authentication middleware for Node.js. </h3>
+<h5>It also gives us a set of support strategies for authentication using Facebook, Twitter, and more.</h5>
+<hr> 
+<div>
+    <h4>Packages needed:</h4>
+    <ul>
+        <li>passport,</li>
+        <li>passport-local (which will allow us to use username and password to log in),</li>
+        <li>express-session,</li>
+        <li>connect-mongo</li>
+        <p>$ npm install passport passport-local express-session connect-mongo</p>
+    </ul>
+    <br>
+</div>
+
+<div>
+    <h4>Three methods that Passport needs to work :</h4>
+    <p> - the <b>Strategy </b>: </p>
+    <p>&nbsp &nbsp defines which strategy we are going to use to authenticate the user, and its configuration, that includes error control as well.</p>
+    <p> - the <b>User serializer</b>  &	the <b>User deserializer</b>:</p>
+    <p> &nbsp &nbsp these methods will define which data is kept in the session, and how to recover this information from the database.</p>
+    <br>
+</div>
+
+<div>
+    <p>We will use a local strategy which is based on using the username and password to authenticate users.</p>
+    <p>const LocalStrategy = require('passport-local').Strategy;</p>
+</div>

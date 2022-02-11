@@ -1,7 +1,9 @@
 <div class="row justify-content-center mt-4">
   <div class="col-sm-4">
     <h1>Register</h1>
+
     <form method="POST" action="/register">
+
       <div class="form-group mb-3">
         <label for="name">Name</label>
         <input
@@ -11,11 +13,13 @@
           type="text"
           class="form-control {{#if errors.name}}is-invalid{{/if}}"
           placeholder="Name"
+          required
         >
         {{#if errors.name}}
           <div class="invalid-feedback">{{errors.name}}</div>
         {{/if}}
       </div>
+
       <div class="form-group mb-3">
         <label for="email">Email</label>
         <input
@@ -25,6 +29,7 @@
           type="email"
           class="form-control {{#if errors.email}}is-invalid{{/if}}"
           placeholder="example@expample.com"
+          required
         >
         {{#if errors.email}}
           <div class="invalid-feedback">{{errors.email}}</div>
@@ -39,12 +44,16 @@
           type="password"
           class="form-control {{#if errors.password}}is-invalid{{/if}}"
           placeholder="Password"
+          required
         >
         {{#if errors.password}}
           <div class="invalid-feedback">{{errors.password}}</div>
         {{/if}}
       </div>
+
       <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
+
   </div>
 </div>
